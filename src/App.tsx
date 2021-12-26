@@ -96,7 +96,7 @@ const App = () => {
       </StyledButton>
 
       <Grid container spacing={3}>
-        {data?.map(item=>(
+        {data?.map(item=>(          //-----> question mark (?) here is used if no data fetched it will return UNDEFINED.
           <Grid item key={item.id} xs={12} sm={4}>
             <Item item={item} handleAddToCart ={handleAddToCart}/>
           </Grid>
