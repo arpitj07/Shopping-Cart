@@ -37,11 +37,11 @@ const App = () => {
     console.log(data)
 
 
-
+    //-----> getTotalItems function defined
     const getTotalItems = (items: CartItemType[]) => 
       items.reduce((ack:number, item)=> ack + item.amount,0);
     
-    
+    //-----> handleAddToCart function defined
     const handleAddToCart = (clickedItem: CartItemType) => {
       setCartItems(prev => {
         //If item already in cart.
@@ -65,7 +65,7 @@ const App = () => {
         prev.reduce((ack,item)=>{
           if(item.id===id){
             if(item.amount===1) return ack;   //--------> this will remove the item from the cart ( empty )
-            return [...ack, {...item, amount: item.amount-1}]
+            return [...ack, {...item, amount: item.amount-1}] //------> this will remove one item if same item is more than 1
           }
           else{
             return [ ...ack, item] //-----> If ID doesnt matches it will just return item.
